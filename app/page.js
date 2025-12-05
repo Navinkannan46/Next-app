@@ -1,6 +1,6 @@
 import ProductCard from "./components/ProductCard";
 export default async function Home() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
+  const res = await fetch(`http://localhost:3000/api/products`);
   const products = await res.json();
   return (
     <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
