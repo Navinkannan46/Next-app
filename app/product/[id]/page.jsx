@@ -14,11 +14,10 @@ export default function ProductPage() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://localhost:3000/api/products/${id}`)
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
-  console.log(product);
 
   // Loading state
   if (!product) return <p className="p-6">Loading...</p>;
